@@ -1,5 +1,6 @@
 package com.growstory.global.auth.handler;
 
+import com.growstory.domain.account.constants.AccountGrade;
 import com.growstory.domain.account.constants.Status;
 import com.growstory.domain.account.entity.Account;
 import com.growstory.domain.account.repository.AccountRepository;
@@ -57,6 +58,7 @@ public class OAuth2AccountSuccessHandler extends SimpleUrlAuthenticationSuccessH
                     .profileImageUrl(profileImageUrl)
                     .point(point)
                     .roles(authorities)
+                    .accountGrade(AccountGrade.GRADE_BRONZE)
                     //status social로 추가
                     .status(Status.SOCIAL_USER)
                     .build());
